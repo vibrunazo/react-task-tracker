@@ -1,7 +1,9 @@
+import './Header.css'
+
 const Header = () => {
     return (
         <header>
-            <h1>Task Tracker</h1>
+            <h2>Task Tracker</h2>
         </header>
     )
 }
