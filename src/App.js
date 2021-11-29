@@ -23,13 +23,27 @@ function App() {
         day: 'Feb 5th at 2:30pm',
         reminder: false,
     },
-])
+  ])
+
+  // Delete Task
+  const deleteTask = (id) => {
+    console.log('delete', id)
+    setTasks(tasks.filter((task) => task.id !== id))
+  }
+
   return (
     <div className="container">
       <Header />
-      <Tasks tasks={tasks}/>
+      {
+        tasks.length > 0 ? (
+          <Tasks tasks={tasks} onDelete={deleteTask} />
+        ) : (
+          'No tasks to show'
+        )
+      }
     </div>
   );
 }
+
 
 export default App;
